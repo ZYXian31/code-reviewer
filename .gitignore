@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 系统文件
+.DS_Store
+*.log
+
+# 原始压缩包（测试集已解压在 code_review_testcases/，无需重复提交）
+代码评审工具测试集.tar.gz

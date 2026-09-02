@@ -1,0 +1,35 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_04_unused_variable.py",
+  "language": "python",
+  "scenario": "general",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 0,
+    "warning": 2,
+    "info": 0,
+    "total": 2
+  },
+  "issues": [
+    {
+      "rule": "unused-variable",
+      "severity": "warning",
+      "line": 9,
+      "column": 5,
+      "message": "变量 `temp_value` 声明后未被使用",
+      "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+      "category": "规范",
+      "source_line": "    temp_value = 0  # 第8行：声明后未使用"
+    },
+    {
+      "rule": "unused-variable",
+      "severity": "warning",
+      "line": 16,
+      "column": 5,
+      "message": "变量 `final_count` 声明后未被使用",
+      "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+      "category": "规范",
+      "source_line": "    final_count = len(result)"
+    }
+  ]
+}

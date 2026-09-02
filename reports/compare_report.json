@@ -1,0 +1,142 @@
+{
+  "line_tolerance": 3,
+  "cases": [
+    {
+      "file": "test_case_01_correct.py",
+      "expected_count": 0,
+      "actual_count": 0,
+      "matched": 0,
+      "missed": [],
+      "extra": [],
+      "line_deltas": []
+    },
+    {
+      "file": "test_case_02_correct.py",
+      "expected_count": 0,
+      "actual_count": 0,
+      "matched": 0,
+      "missed": [],
+      "extra": [],
+      "line_deltas": []
+    },
+    {
+      "file": "test_case_03_assign_in_condition.py",
+      "expected_count": 1,
+      "actual_count": 1,
+      "matched": 1,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        2
+      ]
+    },
+    {
+      "file": "test_case_04_unused_variable.py",
+      "expected_count": 2,
+      "actual_count": 2,
+      "matched": 2,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        1,
+        1
+      ]
+    },
+    {
+      "file": "test_case_05_undefined_variable.py",
+      "expected_count": 1,
+      "actual_count": 1,
+      "matched": 1,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        1
+      ]
+    },
+    {
+      "file": "test_case_06_unused_import.py",
+      "expected_count": 2,
+      "actual_count": 2,
+      "matched": 2,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "test_case_07_bare_except.py",
+      "expected_count": 1,
+      "actual_count": 1,
+      "matched": 1,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        2
+      ]
+    },
+    {
+      "file": "test_case_08_unbalanced_bracket.py",
+      "expected_count": 1,
+      "actual_count": 1,
+      "matched": 1,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        0
+      ]
+    },
+    {
+      "file": "test_case_09_multiple_issues.py",
+      "expected_count": 3,
+      "actual_count": 4,
+      "matched": 3,
+      "missed": [],
+      "extra": [
+        {
+          "line": 9,
+          "rule": "unused-import",
+          "severity": "info",
+          "message": "导入的 `random` 未被使用"
+        }
+      ],
+      "line_deltas": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "file": "test_case_10_scenario_rule.py",
+      "expected_count": 1,
+      "actual_count": 1,
+      "matched": 1,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        2
+      ]
+    },
+    {
+      "file": "test_case_11_prefer_orjson.py",
+      "expected_count": 3,
+      "actual_count": 3,
+      "matched": 3,
+      "missed": [],
+      "extra": [],
+      "line_deltas": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "summary": {
+    "total_expected": 15,
+    "total_missed": 0,
+    "total_extra": 1,
+    "error_missed": 0,
+    "error_extra": 0
+  }
+}

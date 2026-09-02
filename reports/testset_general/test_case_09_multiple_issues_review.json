@@ -1,0 +1,55 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_09_multiple_issues.py",
+  "language": "python",
+  "scenario": "general",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 1,
+    "warning": 1,
+    "info": 2,
+    "total": 4
+  },
+  "issues": [
+    {
+      "rule": "unused-import",
+      "severity": "info",
+      "line": 8,
+      "column": 1,
+      "message": "导入的 `math` 未被使用",
+      "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+      "category": "规范",
+      "source_line": "import math"
+    },
+    {
+      "rule": "unused-import",
+      "severity": "info",
+      "line": 9,
+      "column": 1,
+      "message": "导入的 `random` 未被使用",
+      "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+      "category": "规范",
+      "source_line": "import random  # 第7行：未使用"
+    },
+    {
+      "rule": "unused-variable",
+      "severity": "warning",
+      "line": 13,
+      "column": 5,
+      "message": "变量 `temp` 声明后未被使用",
+      "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+      "category": "规范",
+      "source_line": "    temp = x + y  # 第11行：声明后未使用"
+    },
+    {
+      "rule": "undefined-variable",
+      "severity": "error",
+      "line": 16,
+      "column": 22,
+      "message": "引用了未定义的变量 `unknown_var`",
+      "suggestion": "在使用前定义该变量，或检查变量名是否拼写错误",
+      "category": "逻辑",
+      "source_line": "    result = x * y + unknown_var  # 第16行"
+    }
+  ]
+}

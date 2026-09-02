@@ -1,0 +1,25 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_05_undefined_variable.py",
+  "language": "python",
+  "scenario": "general",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 1,
+    "warning": 0,
+    "info": 0,
+    "total": 1
+  },
+  "issues": [
+    {
+      "rule": "undefined-variable",
+      "severity": "error",
+      "line": 11,
+      "column": 35,
+      "message": "引用了未定义的变量 `tax_rate`",
+      "suggestion": "在使用前定义该变量，或检查变量名是否拼写错误",
+      "category": "逻辑",
+      "source_line": "    total = subtotal - discount + tax_rate  # 第10行"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# 运行时依赖：无（纯 Python 标准库实现：ast / tokenize / json / logging / argparse / urllib）
+#
+# 开发/可选依赖：
+pytest>=8.0        # 可选：替代 unittest 运行 tests/
+# playwright      # 可选：生成报告界面截图

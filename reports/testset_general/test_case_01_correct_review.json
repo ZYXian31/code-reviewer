@@ -1,0 +1,14 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_01_correct.py",
+  "language": "python",
+  "scenario": "general",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "issues": []
+}

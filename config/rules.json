@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "description": "规则启停与严重程度配置：调整 enabled/severity 即可新增或关闭规则，无需修改核心代码。",
+  "rules": {
+    "assign-in-condition": {
+      "enabled": true,
+      "severity": "error",
+      "note": "条件判断中误用赋值运算符（AST 解析失败时通过恢复路径检测）"
+    },
+    "syntax-error": {
+      "enabled": true,
+      "severity": "error",
+      "note": "其他严重语法错误（兜底规则）"
+    },
+    "unbalanced-bracket": {
+      "enabled": true,
+      "severity": "error",
+      "note": "括号不匹配（含 f-string 缺少闭合 }），扩展规则"
+    },
+    "unused-variable": {
+      "enabled": true,
+      "severity": "warning"
+    },
+    "undefined-variable": {
+      "enabled": true,
+      "severity": "error"
+    },
+    "unused-import": {
+      "enabled": true,
+      "severity": "info"
+    },
+    "bare-except": {
+      "enabled": true,
+      "severity": "warning"
+    },
+    "prefer-orjson": {
+      "enabled": true,
+      "severity": "warning"
+    },
+    "scenario-rule": {
+      "enabled": true,
+      "severity": "warning"
+    }
+  }
+}

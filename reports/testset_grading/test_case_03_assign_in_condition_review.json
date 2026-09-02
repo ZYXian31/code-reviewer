@@ -1,0 +1,29 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_03_assign_in_condition.py",
+  "language": "python",
+  "scenario": "grading",
+  "parse_success": false,
+  "syntax_error": {
+    "message": "invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+    "line": 11,
+    "column": 8
+  },
+  "counts": {
+    "error": 1,
+    "warning": 0,
+    "info": 0,
+    "total": 1
+  },
+  "issues": [
+    {
+      "rule": "assign-in-condition",
+      "severity": "error",
+      "line": 11,
+      "column": 16,
+      "message": "条件判断中疑似误用赋值运算符 `=`，应为 `==`",
+      "suggestion": "将赋值运算符 = 改为比较运算符 ==；条件判断中不能直接赋值，若确实需要赋值请使用海象运算符 := 或拆分语句",
+      "category": "语法严重错误",
+      "source_line": "    if user_id = 100:  # 第9行：应为 =="
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_06_unused_import.py",
+  "language": "python",
+  "scenario": "grading",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 0,
+    "warning": 0,
+    "info": 2,
+    "total": 2
+  },
+  "issues": [
+    {
+      "rule": "unused-import",
+      "severity": "info",
+      "line": 6,
+      "column": 1,
+      "message": "导入的 `os` 未被使用",
+      "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+      "category": "规范",
+      "source_line": "import os  # 第6行：导入后未使用"
+    },
+    {
+      "rule": "unused-import",
+      "severity": "info",
+      "line": 7,
+      "column": 1,
+      "message": "导入的 `sys` 未被使用",
+      "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+      "category": "规范",
+      "source_line": "import sys  # 第7行：导入后未使用"
+    }
+  ]
+}

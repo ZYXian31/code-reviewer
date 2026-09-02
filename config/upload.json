@@ -1,0 +1,6 @@
+{
+  "mode": "webhook",
+  "endpoint": "https://your-iflytek-cloud-doc-endpoint.example.com/api/doc/create",
+  "api_token": "在此填入团队提供的内容 API Token",
+  "description": "i 讯飞云文档上传配置模板。mode 可选 webhook（内容 API）或 lark_cli（调用本机 Lark Cli i讯飞版）。"
+}

@@ -1,0 +1,166 @@
+{
+  "test_suite_version": "1.0",
+  "test_cases": [
+    {
+      "file": "test_case_01_correct.py",
+      "description": "正例：无问题的规范代码",
+      "expected_issues": []
+    },
+    {
+      "file": "test_case_02_correct.py",
+      "description": "正例：符合通用场景的代码",
+      "expected_issues": []
+    },
+    {
+      "file": "test_case_03_assign_in_condition.py",
+      "description": "缺陷：条件判断中误用赋值运算符",
+      "expected_issues": [
+        {
+          "line": 9,
+          "rule": "assign-in-condition",
+          "severity": "error",
+          "message": "条件判断中疑似误用赋值运算符 `=`，应为 `==`"
+        }
+      ]
+    },
+    {
+      "file": "test_case_04_unused_variable.py",
+      "description": "缺陷：变量声明后未使用",
+      "expected_issues": [
+        {
+          "line": 8,
+          "rule": "unused-variable",
+          "severity": "warning",
+          "message": "变量 `temp_value` 声明后未被使用"
+        },
+        {
+          "line": 15,
+          "rule": "unused-variable",
+          "severity": "warning",
+          "message": "变量 `final_count` 声明后未被使用"
+        }
+      ]
+    },
+    {
+      "file": "test_case_05_undefined_variable.py",
+      "description": "缺陷：引用未定义的变量",
+      "expected_issues": [
+        {
+          "line": 10,
+          "rule": "undefined-variable",
+          "severity": "error",
+          "message": "引用了未定义的变量 `tax_rate`"
+        }
+      ]
+    },
+    {
+      "file": "test_case_06_unused_import.py",
+      "description": "缺陷：导入的模块未使用",
+      "expected_issues": [
+        {
+          "line": 6,
+          "rule": "unused-import",
+          "severity": "info",
+          "message": "导入的 `os` 未被使用"
+        },
+        {
+          "line": 7,
+          "rule": "unused-import",
+          "severity": "info",
+          "message": "导入的 `sys` 未被使用"
+        }
+      ]
+    },
+    {
+      "file": "test_case_07_bare_except.py",
+      "description": "缺陷：裸except未指定异常类型",
+      "expected_issues": [
+        {
+          "line": 10,
+          "rule": "bare-except",
+          "severity": "warning",
+          "message": "建议指定捕获的异常类型"
+        }
+      ]
+    },
+    {
+      "file": "test_case_08_unbalanced_bracket.py",
+      "description": "缺陷：括号不匹配（f-string缺少闭合}）",
+      "expected_issues": [
+        {
+          "line": 8,
+          "rule": "unbalanced-bracket",
+          "severity": "error",
+          "message": "括号不匹配，缺少闭合的 `}`"
+        }
+      ]
+    },
+    {
+      "file": "test_case_09_multiple_issues.py",
+      "description": "综合：包含多个不同类型的问题",
+      "expected_issues": [
+        {
+          "line": 7,
+          "rule": "unused-import",
+          "severity": "info",
+          "message": "导入的 `random` 未被使用"
+        },
+        {
+          "line": 11,
+          "rule": "unused-variable",
+          "severity": "warning",
+          "message": "变量 `temp` 声明后未被使用"
+        },
+        {
+          "line": 16,
+          "rule": "undefined-variable",
+          "severity": "error",
+          "message": "引用了未定义的变量 `unknown_var`"
+        }
+      ]
+    },
+    {
+      "file": "test_case_10_scenario_rule.py",
+      "description": "场景规则：批改场景下的命名约定",
+      "expected_issues": [
+        {
+          "line": 7,
+          "rule": "scenario-rule",
+          "severity": "warning",
+          "message": "批改场景下，评分相关函数应以 score_ 或 grade_ 开头",
+          "note": "此问题仅在「批改场景」下检出，通用场景下无问题"
+        }
+      ]
+    },
+    {
+      "file": "test_case_11_prefer_orjson.py",
+      "description": "缺陷：使用标准库 json 而非高性能的 orjson",
+      "expected_issues": [
+        {
+          "line": 6,
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "message": "建议使用高性能的 orjson 替代标准库 json（import json）"
+        },
+        {
+          "line": 11,
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "message": "建议使用 orjson.loads 替代 json.loads"
+        },
+        {
+          "line": 16,
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "message": "建议使用 orjson.dumps 替代 json.dumps"
+        }
+      ]
+    }
+  ],
+  "scoring_notes": {
+    "漏报惩罚": "error级问题（assign-in-condition, undefined-variable, unbalanced-bracket）出现漏报，检查准确性维度不得评为优(17-20分)",
+    "误报容忍": "允许少量误报（≤2个info级或warning级），但大量误报会降低得分",
+    "行号精度": "行号允许±1行的偏差（考虑不同AST实现的差异）",
+    "场景切换": "test_case_10在通用场景下应无问题，切换到批改场景后应检出第7行warning"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_07_bare_except.py",
+  "language": "python",
+  "scenario": "grading",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 1
+  },
+  "issues": [
+    {
+      "rule": "bare-except",
+      "severity": "warning",
+      "line": 12,
+      "column": 5,
+      "message": "建议指定捕获的异常类型",
+      "suggestion": "请指定具体的异常类型，如 `except ValueError:`、`except (ValueError, TypeError):` 或 `except Exception as e:`",
+      "category": "规范",
+      "source_line": "    except:  # 第10行：应指定异常类型"
+    }
+  ]
+}

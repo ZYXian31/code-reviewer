@@ -1,0 +1,29 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_08_unbalanced_bracket.py",
+  "language": "python",
+  "scenario": "general",
+  "parse_success": false,
+  "syntax_error": {
+    "message": "f-string: expecting '}'",
+    "line": 8,
+    "column": 37
+  },
+  "counts": {
+    "error": 1,
+    "warning": 0,
+    "info": 0,
+    "total": 1
+  },
+  "issues": [
+    {
+      "rule": "unbalanced-bracket",
+      "severity": "error",
+      "line": 8,
+      "column": 30,
+      "message": "括号不匹配，缺少闭合的 `}`",
+      "suggestion": "补全缺失的闭合括号，或检查是否存在未闭合的 f-string 表达式",
+      "category": "语法严重错误",
+      "source_line": "    message = f\"用户 {name} 年龄 {age\"  # 第8行：缺少闭合的 }"
+    }
+  ]
+}

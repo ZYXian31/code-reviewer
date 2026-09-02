@@ -1,0 +1,19 @@
+{
+  "name": "grading",
+  "description": "批改/评分场景：在通用规则基础上叠加场景专属规则——评分相关函数必须以 score_ 或 grade_ 开头。",
+  "rules": [
+    {
+      "rule": "scenario-rule",
+      "description": "批改场景命名约定：评分相关函数以 score_/grade_ 开头",
+      "params": {
+        "required_prefixes": ["score_", "grade_"],
+        "keywords": [
+          "answer", "reference", "score", "grade", "grading", "mark",
+          "批改", "评分", "成绩", "得分", "答案", "阅卷"
+        ],
+        "message": "批改场景下，评分相关函数应以 {prefixes} 开头",
+        "severity": "warning"
+      }
+    }
+  ]
+}

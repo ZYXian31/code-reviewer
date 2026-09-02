@@ -1,0 +1,338 @@
+{
+  "tool": "code-reviewer",
+  "version": "1.0.0",
+  "generated_at": "2026-08-25T03:01:00+08:00",
+  "scenarios": [
+    "general"
+  ],
+  "summary": {
+    "files": 11,
+    "files_with_issues": 8,
+    "error": 4,
+    "warning": 7,
+    "info": 4,
+    "total": 15
+  },
+  "results": [
+    {
+      "file": "code_review_testcases/test_case_01_correct.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 0,
+        "total": 0
+      },
+      "issues": []
+    },
+    {
+      "file": "code_review_testcases/test_case_02_correct.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 0,
+        "total": 0
+      },
+      "issues": []
+    },
+    {
+      "file": "code_review_testcases/test_case_03_assign_in_condition.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": false,
+      "syntax_error": {
+        "message": "invalid syntax. Maybe you meant '==' or ':=' instead of '='?",
+        "line": 11,
+        "column": 8
+      },
+      "counts": {
+        "error": 1,
+        "warning": 0,
+        "info": 0,
+        "total": 1
+      },
+      "issues": [
+        {
+          "rule": "assign-in-condition",
+          "severity": "error",
+          "line": 11,
+          "column": 16,
+          "message": "条件判断中疑似误用赋值运算符 `=`，应为 `==`",
+          "suggestion": "将赋值运算符 = 改为比较运算符 ==；条件判断中不能直接赋值，若确实需要赋值请使用海象运算符 := 或拆分语句",
+          "category": "语法严重错误",
+          "source_line": "    if user_id = 100:  # 第9行：应为 =="
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_04_unused_variable.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 2,
+        "info": 0,
+        "total": 2
+      },
+      "issues": [
+        {
+          "rule": "unused-variable",
+          "severity": "warning",
+          "line": 9,
+          "column": 5,
+          "message": "变量 `temp_value` 声明后未被使用",
+          "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+          "category": "规范",
+          "source_line": "    temp_value = 0  # 第8行：声明后未使用"
+        },
+        {
+          "rule": "unused-variable",
+          "severity": "warning",
+          "line": 16,
+          "column": 5,
+          "message": "变量 `final_count` 声明后未被使用",
+          "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+          "category": "规范",
+          "source_line": "    final_count = len(result)"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_05_undefined_variable.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 1,
+        "warning": 0,
+        "info": 0,
+        "total": 1
+      },
+      "issues": [
+        {
+          "rule": "undefined-variable",
+          "severity": "error",
+          "line": 11,
+          "column": 35,
+          "message": "引用了未定义的变量 `tax_rate`",
+          "suggestion": "在使用前定义该变量，或检查变量名是否拼写错误",
+          "category": "逻辑",
+          "source_line": "    total = subtotal - discount + tax_rate  # 第10行"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_06_unused_import.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 2,
+        "total": 2
+      },
+      "issues": [
+        {
+          "rule": "unused-import",
+          "severity": "info",
+          "line": 6,
+          "column": 1,
+          "message": "导入的 `os` 未被使用",
+          "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+          "category": "规范",
+          "source_line": "import os  # 第6行：导入后未使用"
+        },
+        {
+          "rule": "unused-import",
+          "severity": "info",
+          "line": 7,
+          "column": 1,
+          "message": "导入的 `sys` 未被使用",
+          "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+          "category": "规范",
+          "source_line": "import sys  # 第7行：导入后未使用"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_07_bare_except.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 1,
+        "info": 0,
+        "total": 1
+      },
+      "issues": [
+        {
+          "rule": "bare-except",
+          "severity": "warning",
+          "line": 12,
+          "column": 5,
+          "message": "建议指定捕获的异常类型",
+          "suggestion": "请指定具体的异常类型，如 `except ValueError:`、`except (ValueError, TypeError):` 或 `except Exception as e:`",
+          "category": "规范",
+          "source_line": "    except:  # 第10行：应指定异常类型"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_08_unbalanced_bracket.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": false,
+      "syntax_error": {
+        "message": "f-string: expecting '}'",
+        "line": 8,
+        "column": 37
+      },
+      "counts": {
+        "error": 1,
+        "warning": 0,
+        "info": 0,
+        "total": 1
+      },
+      "issues": [
+        {
+          "rule": "unbalanced-bracket",
+          "severity": "error",
+          "line": 8,
+          "column": 30,
+          "message": "括号不匹配，缺少闭合的 `}`",
+          "suggestion": "补全缺失的闭合括号，或检查是否存在未闭合的 f-string 表达式",
+          "category": "语法严重错误",
+          "source_line": "    message = f\"用户 {name} 年龄 {age\"  # 第8行：缺少闭合的 }"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_09_multiple_issues.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 1,
+        "warning": 1,
+        "info": 2,
+        "total": 4
+      },
+      "issues": [
+        {
+          "rule": "unused-import",
+          "severity": "info",
+          "line": 8,
+          "column": 1,
+          "message": "导入的 `math` 未被使用",
+          "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+          "category": "规范",
+          "source_line": "import math"
+        },
+        {
+          "rule": "unused-import",
+          "severity": "info",
+          "line": 9,
+          "column": 1,
+          "message": "导入的 `random` 未被使用",
+          "suggestion": "删除未使用的导入；若为对外重导出，请使用显式 `as` 别名（如 `import x as x`）",
+          "category": "规范",
+          "source_line": "import random  # 第7行：未使用"
+        },
+        {
+          "rule": "unused-variable",
+          "severity": "warning",
+          "line": 13,
+          "column": 5,
+          "message": "变量 `temp` 声明后未被使用",
+          "suggestion": "若该变量确实不需要，请删除；若为 API 预留，请在调用处使用或添加下划线前缀约定",
+          "category": "规范",
+          "source_line": "    temp = x + y  # 第11行：声明后未使用"
+        },
+        {
+          "rule": "undefined-variable",
+          "severity": "error",
+          "line": 16,
+          "column": 22,
+          "message": "引用了未定义的变量 `unknown_var`",
+          "suggestion": "在使用前定义该变量，或检查变量名是否拼写错误",
+          "category": "逻辑",
+          "source_line": "    result = x * y + unknown_var  # 第16行"
+        }
+      ]
+    },
+    {
+      "file": "code_review_testcases/test_case_10_scenario_rule.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 0,
+        "total": 0
+      },
+      "issues": []
+    },
+    {
+      "file": "code_review_testcases/test_case_11_prefer_orjson.py",
+      "language": "python",
+      "scenario": "general",
+      "parse_success": true,
+      "syntax_error": null,
+      "counts": {
+        "error": 0,
+        "warning": 3,
+        "info": 0,
+        "total": 3
+      },
+      "issues": [
+        {
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "line": 6,
+          "column": 1,
+          "message": "建议使用高性能的 orjson 替代标准库 json（import json）",
+          "suggestion": "执行 `pip install orjson`，并将 `import json` 替换为 `import orjson`",
+          "category": "性能",
+          "source_line": "import json  # 第6行：应使用 orjson"
+        },
+        {
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "line": 11,
+          "column": 12,
+          "message": "建议使用 orjson.loads 替代 json.loads",
+          "suggestion": "将 `json.loads` 替换为 `orjson.loads`（注意 orjson 返回值/参数类型差异）",
+          "category": "性能",
+          "source_line": "    return json.loads(config_str)"
+        },
+        {
+          "rule": "prefer-orjson",
+          "severity": "warning",
+          "line": 16,
+          "column": 12,
+          "message": "建议使用 orjson.dumps 替代 json.dumps",
+          "suggestion": "将 `json.dumps` 替换为 `orjson.dumps`（注意 orjson 返回值/参数类型差异）",
+          "category": "性能",
+          "source_line": "    return json.dumps(data, ensure_ascii=False)"
+        }
+      ]
+    }
+  ]
+}

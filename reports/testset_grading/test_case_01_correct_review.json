@@ -1,0 +1,25 @@
+{
+  "file": "/sessions/vigilant-jolly-mayer/mnt/教育群AI提效作业/code_review_testcases/test_case_01_correct.py",
+  "language": "python",
+  "scenario": "grading",
+  "parse_success": true,
+  "syntax_error": null,
+  "counts": {
+    "error": 0,
+    "warning": 1,
+    "info": 0,
+    "total": 1
+  },
+  "issues": [
+    {
+      "rule": "scenario-rule",
+      "severity": "warning",
+      "line": 21,
+      "column": 1,
+      "message": "批改场景下，评分相关函数应以 score_/grade_ 开头",
+      "suggestion": "修改函数名以符合当前场景的命名约定，或在场景配置中调整规则参数",
+      "category": "特定场景",
+      "source_line": "def calculate_score(scores: List[int]) -> float:"
+    }
+  ]
+}
